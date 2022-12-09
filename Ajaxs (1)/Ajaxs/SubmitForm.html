@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery.min.js"></script>
+  </head>
+
+  <body>
+    <p>Submitting form using ajax request</p>
+
+    <form action="">
+      First name:
+      <input type="text" id="txtFirstName" name="FirstName" value="" /><br />
+      Last name:
+      <input type="text" id="txtLastName" name="LastName" value="" /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <span id="errorMessage"></span>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("form").submit(function (event) {
+      if ($("input").first().val() === "ramesh") {
+        console.log($(this).serializeArray());
+
+        $("#errorMessage").text("validation completed.").fadeOut(2000);
+      } else {
+        $("#errorMessage").text("validation failed.").fadeOut(3000);
+      }
+      event.preventDefault();
+    });
+  });
+</script>

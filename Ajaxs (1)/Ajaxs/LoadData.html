@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="div1">replace the content.</div>
+    <br />
+
+    <button>Load Data...</button>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("button").click(function ()
+    
+    {
+      $("#div1").load("testfile.txt1", null, onComplete);
+
+      
+    });
+  });
+
+  function onComplete(responseData, textStatus, xmlhttpRequest) {
+    if (textStatus === "success")
+      alert("External content loaded successfully!");
+
+    if (textStatus === "error")
+      alert( "Error: " + xmlhttpRequest.status + ": " + xmlhttpRequest.statusText );
+
+    console.log(xmlhttpRequest);
+  }
+</script>

@@ -1,0 +1,1 @@
+learnin ajax using jquery's load method.

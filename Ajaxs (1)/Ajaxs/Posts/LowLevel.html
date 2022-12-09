@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../../jquery.min.js"></script>
+  </head>
+
+  <body>
+    <p>Post reqeust using .ajax()</p>
+
+    <button>Http Post call</button>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("button").click(function () {
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/post",
+        type: "post",
+        dataType: "json",
+        data: { title: "learning jquery", body: "making post request." },
+        success: onSuccess,
+        complete: function () {
+          alert("request has been completed.");
+        },
+        error: onFailed,
+      });
+    });
+  });
+
+  function onSuccess(responseData, textStatus, xmlhttpRequest) {
+    alert("stausText : " + textStatus);
+
+    alert("stausCode : " + xmlhttpRequest.status);
+
+    console.log(xmlhttpRequest);
+  }
+  function onFailed(xMLHttpRequest)
+  
+  {
+    console.log(xMLHttpRequest.status + " : " + xMLHttpRequest.statusText);
+  }
+</script>

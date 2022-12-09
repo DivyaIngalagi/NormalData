@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="./jquery.min.js"></script>
+  </head>
+
+  <body>
+    <ul id="special">
+      <li>li-11</li>
+
+      <li>li-21</li>
+
+      <li>li-31</li>
+    </ul>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    // $("#special li")
+    //   .width("34px")
+
+    //   .height("74px")
+    //   .each(function (index, item) {
+    //     alert($(item).text());
+    //     var item=$(item);
+    //     $(item).text($(item).text()+"1");
+    // });
+
+    // $("#special").each(function () {
+    //   alert($(this).text());
+    // });
+
+    $("li").each(function () {
+      alert($(this).text());
+    });
+  });
+</script>

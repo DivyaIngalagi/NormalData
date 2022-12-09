@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A simple page</title>
+
+    <style>
+      p {
+        /* a = 0, b = 0, c=1 => 1 */
+        font-size: larger;
+        background-color: green;
+      }
+
+      div p {
+        /* a = 0, b = 0, c=2 => 2 */
+        background-color: red;
+      }
+
+      div p.priority {
+        /* a = 0, b = 1, c=2 => 12 */
+        background-color: brown;
+      }
+      #HighPriority {
+        /* a = 1, b = 0, c= => 100 */
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Heading 1</h1>
+
+    <div>A div.</div>
+
+    <p>stand alone</p>
+
+    <div>
+      <p id="HighPriority">without selector.</p>
+      <p class="priority">child with class.</p>
+    </div>
+  </body>
+</html>
